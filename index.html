@@ -451,7 +451,7 @@
         }
 
         function exitQuiz() {
-            document.getElementById('quiz-result').classList.add('hidden'); // Hide result if open
+            document.getElementById('quiz-result') ? document.getElementById('quiz-result').classList.add('hidden') : null; 
             document.getElementById('result-screen').classList.add('hidden'); // Hide result screen
             document.getElementById('quiz-interface').classList.add('hidden');
             document.getElementById('selection-screen').classList.remove('hidden');
