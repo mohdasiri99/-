@@ -1,0 +1,60 @@
+<!-- PAGE 3: SIMULATED TESTS -->
+<section id="tests" class="page-section active">
+    <h2 class="text-3xl font-black text-slate-900 mb-8 border-b pb-4">مركز الاختبارات والمحاكاة</h2>
+    
+    <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 max-w-5xl mx-auto">
+        
+        <!-- Model Selection Screen -->
+        <div id="model-selection" class="text-center py-6">
+            <h3 class="text-2xl font-bold mb-2 text-slate-800">اختر نموذج الاختبار</h3>
+            <p class="text-slate-500 mb-8">اختر المستوى المناسب لك لبدء التدريب (25 سؤال لكل نموذج)</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-right">
+                <!-- Model 1 -->
+                <div onclick="startQuiz(1)" class="model-card border-2 border-slate-100 p-6 rounded-xl hover:bg-blue-50 group">
+                    <div class="text-blue-500 text-3xl mb-3"><i class="fa-solid fa-layer-group"></i></div>
+                    <h4 class="font-bold text-lg text-slate-800 group-hover:text-blue-700">النموذج الأول</h4>
+                    <span class="text-xs font-bold text-white bg-blue-500 px-2 py-1 rounded">متقدم</span>
+                    <p class="text-xs text-slate-500 mt-2">الكفايات الأساسية وتطبيق النظريات.</p>
+                </div>
+                <!-- ... (Model 2, 3, 4 Cards) ... -->
+            </div>
+        </div>
+
+        <!-- Quiz Interface (Hidden Initially) -->
+        <div id="quiz-interface" class="hidden">
+            <div class="flex justify-between items-center mb-6 border-b pb-4">
+                <div>
+                    <span id="active-model-name" class="font-bold text-slate-800 text-lg block"></span>
+                    <span id="question-count" class="text-xs text-slate-500">سؤال 1 من 25</span>
+                </div>
+                <button onclick="exitQuiz()" class="text-red-500 text-sm font-bold hover:bg-red-50 px-3 py-1 rounded"><i class="fa-solid fa-xmark ml-1"></i> خروج</button>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="w-full bg-gray-200 rounded-full h-2 mb-6">
+                <div id="progress-bar" class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+
+            <h3 id="question-text" class="text-lg md:text-xl font-bold text-slate-800 mb-6 leading-relaxed"></h3>
+            
+            <div id="options-container" class="space-y-3"></div>
+
+            <div id="feedback-area" class="hidden mt-6 p-4 rounded-lg bg-gray-50 border border-gray-200">
+                <p id="feedback-text" class="text-sm font-bold mb-2"></p>
+                <p id="feedback-explanation" class="text-xs text-slate-600 mb-3"></p>
+                <button onclick="nextQuestion()" class="bg-slate-900 text-white px-6 py-2 rounded-lg text-sm hover:bg-slate-800">السؤال التالي</button>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="quiz-result" class="hidden text-center py-10">
+            <div class="text-6xl mb-4">🏆</div>
+            <h3 class="text-2xl font-bold mb-2">انتهى الاختبار</h3>
+            <p class="text-lg text-slate-600 mb-6">النتيجة: <span id="final-score" class="font-bold text-blue-600 text-2xl">0</span> / 25</p>
+            <div id="result-message" class="text-sm p-4 rounded-lg mb-6"></div>
+            <button onclick="exitQuiz()" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-slate-800 transition">العودة للقائمة</button>
+        </div>
+
+    </div>
+</section>
